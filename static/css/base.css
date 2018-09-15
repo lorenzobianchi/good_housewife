@@ -1,0 +1,12 @@
+.claim-container {
+  height: 500px;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+.flex-1 {
+  flex: 1;
+}
