@@ -2,14 +2,15 @@
 <html lang="it" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>PMI Company Website</title>
+    <title>Good Housewife</title>
     <link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/woman.ico' %}">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light fixed-top">
       <a class="navbar-brand" href="{% url 'home' %}">The Good Housewife</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -24,9 +25,12 @@
           </li>
         </ul>
       </div>
+      <div class="">
+        <a class="nav-link btn btn-outline-info" href="{% url 'spesa_add' %}">+ Nuova spesa</a>
+      </div>
     </nav>
 
-    <div>
+    <div class="content">
       {% block content %}
       {% endblock content %}
     </div>

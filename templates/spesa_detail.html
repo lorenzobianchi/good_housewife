@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 pt-4">
+      <div class="w-100 d-flex flex-row justify-content-between">
+        <h4>{{ object.importo }} € ({{ spesa.causale }})</h4>
+        {% if object.tipo_spesa %}
+          <span class="badge spesa-badge mt-3" style="background: {{ spesa.tipo_spesa.colore_badge }};">{{ spesa.tipo_spesa }}</span>
+        {% endif %}
+
+      </div>
+      <table class="table mt-4 table-striped">
+        <tbody>
+          <tr>
+            <td><b>IMPORTO</b></td>
+            <td>{{ object.importo }} €</td>
+          </tr>
+          <tr>
+            <td><b>CAUSALE</b></td>
+            <td>{{ object.causale }}</td>
+          </tr>
+          <tr>
+            <td><b>ANNO</b></td>
+            <td>{{ object.data.year }}</td>
+          </tr>
+          <tr>
+            <td><b>MESE</b></td>
+            <td>{{ object.data.month }}</td>
+          </tr>
+          <tr>
+            <td><b>GIORNO</b></td>
+            <td>{{ object.data.day }}</td>
+          </tr>
+          <tr>
+            <td><b>NOTE</b></td>
+            <td>{{ object.note }}</td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock content %}
