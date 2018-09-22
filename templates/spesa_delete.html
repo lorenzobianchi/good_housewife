@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center pt-3">
+      <form method="post" class="card p-3">{% csrf_token %}
+        <p style="font-size: 18px;">Sei sicuro di voler eliminare la spesa di <b>{{ object.importo }} €</b> per <b>{{ spesa.causale }}</b> ?</p>
+        <div class="d-inline">
+          <a href="{% url 'spesa_detail' object.pk %}" class="btn btn-danger">Annulla</a>
+          <input type="submit" value="Conferma eliminazione" class="btn btn-success" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content%}

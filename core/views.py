@@ -16,3 +16,8 @@ class SpesaAddView(CreateView):
     template_name = 'spesa_add.html'
     model = Spesa
     form_class = SpesaAddForm
+
+class SpesaDeleteView(DeleteView):
+    model = Spesa
+    template_name = 'spesa_delete.html'
+    success_url = reverse_lazy('home')

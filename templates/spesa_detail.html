@@ -5,11 +5,16 @@
   <div class="row">
     <div class="col-md-12 pt-4">
       <div class="w-100 d-flex flex-row justify-content-between">
-        <h4>{{ object.importo }} € ({{ spesa.causale }})</h4>
-        {% if object.tipo_spesa %}
-          <span class="badge spesa-badge mt-3" style="background: {{ spesa.tipo_spesa.colore_badge }};">{{ spesa.tipo_spesa }}</span>
-        {% endif %}
-
+        <div class="d-flex flex-row">
+          <h4>{{ object.importo }} € ({{ spesa.causale }})</h4>
+          {% if object.tipo_spesa %}
+            <span class="badge spesa-badge" style="background: {{ spesa.tipo_spesa.colore_badge }};">{{ spesa.tipo_spesa }}</span>
+          {% endif %}
+        </div>
+        <div class="d-inline">
+          <a class="btn btn-warning btn-sm">Modifica Spesa <i class="fa fa-pencil"></i></a>
+          <a href="{% url 'spesa_delete' object.pk %}" class="btn btn-danger btn-sm">Elimina Spesa <i class="fa fa-trash-o"></i></a>
+        </div>
       </div>
       <table class="table mt-4 table-striped">
         <tbody>
