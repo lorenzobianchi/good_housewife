@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <div class="login-card card p-2 mt-4">
+      <div class="login-card card p-2 mt-3">
         <div class="text-center py-3">
           <h4>The Good Housewife</h4>
           <img src="{% static 'img/maid.png' %}" alt="maid icon" style="width:50px;height:auto;">
         </div>
-        <p class="text-center">Inserisci le tue credenziali per fare login</p>
+        <p class="text-center">Inserisci le tue credenziali per registarti</p>
         <form method="post">
           {% csrf_token %}
           {{ form.as_p }}
-          <button type="submit" class="btn btn-primary btn-block">Login</button>
+          <button type="submit" class="btn btn-primary btn-block">Sign up</button>
         </form>
       </div>
     </div>

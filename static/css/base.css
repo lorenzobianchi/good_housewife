@@ -72,13 +72,26 @@
 }
 
 .login-card {
-  width: 400px;
+  width: 500px;
   padding-top: 40px;
   margin: auto;
+  background-color: aliceblue;
 }
 
 .login-card label {
   color: blue;
   margin-bottom: 3px;
   font-size: 14px;
+}
+
+.login-card ul {
+  padding-left: 20px;
+}
+
+.login-card span.helptext {
+  font-size: 12px;
+}
+
+.login-card ul li {
+  font-size: 12px;
 }
