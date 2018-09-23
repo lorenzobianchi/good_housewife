@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="login-card card p-2 bg-warning">
+        <div class="text-center py-3">
+          <h4>The Good Housewife</h4>
+        </div>
+        <p>Inserisci le tue credenziali per fare login</p>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
