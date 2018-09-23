@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 pt-4">
+      <div class="w-100 d-flex flex-row justify-content-between">
+        <h4>Tipo Spesa</h4>
+        <div class="d-inline">
+          <a href="{% url 'tipo_spesa_edit' object.pk %}" class="btn btn-outline-dark btn-sm">Modifica <i class="fa fa-pencil"></i></a>
+          <a href="{% url 'tipo_spesa_delete' object.pk %}" class="btn btn-outline-dark btn-sm">Elimina <i class="fa fa-trash-o"></i></a>
+        </div>
+      </div>
+      <div>
+        <table class="table mt-4 table-striped">
+          <tbody>
+            <tr>
+              <td><b>Nome</b></td>
+              <td>{{ object.nome }}</td>
+            </tr>
+            <tr>
+              <td><b>Colore</b></td>
+              <td>{{ object.colore_badge }}</td>
+            </tr>
+            <tr>
+              <td><b>Tipologia</b></td>
+              <td>
+                {% if object.spesa_ordinaria %}
+                <span class='text-warning'>Spesa ordinaria</span>
+                {% else %}
+                <span class='text-danger'>Spesa straordinaria</span>
+                {% endif %}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

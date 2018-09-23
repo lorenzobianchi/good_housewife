@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="subnavbar">
+
+</div>
+<div class="container pt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="d-flex flex-row justify-content-between my-2">
+        <h2 class="mb-0">Tipi di spesa</h2>
+        <a class="btn btn-sm btn-outline-dark mt-1" href="{% url 'tipo_spesa_add' %}">+ Aggiungi un tipo di spesa</a>
+      </div>
+      <p>I tipi di spesa vengono utilizzati per classificare le spese in una determinata categoria.</p>
+      <a href="" class="no-link-style">
+        <table class="table table-sm table-striped mt-3">
+          <thead class="thead-dark">
+            <th scope='col'>Tipo</th>
+            <th scope='col'>Colore</th>
+            <th scope='col'>Spesa ordinaria</th>
+            <th scope='col'>Dettaglio</th>
+          </thead>
+          <tbody>
+            {% for object in object_list %}
+              <tr>
+                <td>{{ object.nome }}</td>
+                <td>
+                  <span class="badge" style="background:{{ object.colore_badge }};">{{ object.colore_badge }}</span>
+                </td>
+                <td>
+                  {% if object.spesa_ordinaria %}
+                  <i class="fa fa-check text-success ml-5"></i>
+                  {% else %}
+                  <i class="fa fa-close text-danger ml-5"></i>
+                  {% endif %}
+                </td>
+                <td class="pl-3">
+                  <a href="{% url 'tipo_spesa_detail' object.pk %}"><i class="fa fa-angle-right ml-4"></i></a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

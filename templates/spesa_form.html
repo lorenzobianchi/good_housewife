@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex flex-row w-100 justify-content-between mb-5">
+        {% if object %}
+        <h3>Modifica spesa</h3>
+        {% else %}
+        <h3>Nuova spesa</h3>
+        {% endif %}
+        <div class="p-1">
+          <a class="btn btn-sm btn-outline-dark mt-1" href="{% url 'tipo_spesa_add' %}">+ Aggiungi un tipo di spesa</a>
+        </div>
+      </div>
+        {% crispy form %}
+    </div>
+  </div>
+</div>
+{% endblock content %}

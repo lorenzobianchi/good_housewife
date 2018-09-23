@@ -12,8 +12,8 @@
           {% endif %}
         </div>
         <div class="d-inline">
-          <a class="btn btn-warning btn-sm">Modifica Spesa <i class="fa fa-pencil"></i></a>
-          <a href="{% url 'spesa_delete' object.pk %}" class="btn btn-danger btn-sm">Elimina Spesa <i class="fa fa-trash-o"></i></a>
+          <a href="{% url 'spesa_edit' object.pk %}" class="btn btn-outline-dark btn-sm">Modifica Spesa <i class="fa fa-pencil"></i></a>
+          <a href="{% url 'spesa_delete' object.pk %}" class="btn btn-outline-dark btn-sm">Elimina Spesa <i class="fa fa-trash-o"></i></a>
         </div>
       </div>
       <table class="table mt-4 table-striped">
@@ -41,6 +41,7 @@
           <tr>
             <td><b>NOTE</b></td>
             <td>{{ object.note }}</td>
+          </tr>
         </tbody>
       </table>
     </div>

@@ -7,7 +7,7 @@
   height: 40px;
   position: fixed;
   top: 56px;
-  background-color: CadetBlue;
+  background-color: #818182;
   z-index: 10;
 }
 
@@ -17,17 +17,21 @@
 }
 
 .spesa-card:hover {
-  background-color: PaleGreen;
+  background-color: LemonChiffon;
 }
 
 .spesa-badge {
   font-size: 13px;
   position: relative;
-  bottom: 5px;
+  bottom: 3px;
   color: #fff;
   margin-top: 0.7rem;
   margin-left: 10px;
   margin-bottom: 0.5rem;
+}
+
+.spesa-card p {
+  font-size: 14px;
 }
 
 .no-link-style,

@@ -5,7 +5,11 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h3>Nuova spesa</h3>
+      {% if object %}
+      <h3>Modifica tipo spesa</h3>
+      {% else %}
+      <h3>Nuovo tipo spesa</h3>
+      {% endif %}
         {% crispy form %}
     </div>
   </div>

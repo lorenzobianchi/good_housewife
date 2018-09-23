@@ -22,3 +22,6 @@ class TipoSpesa(models.Model):
 
     def __str__(self):
         return self.nome
+
+    def get_absolute_url(self):
+        return reverse('tipo_spesa_detail', args=[str(self.id)])
